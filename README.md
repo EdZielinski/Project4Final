@@ -24,7 +24,9 @@
 
 ## Key Components and Design
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This website consists of several pages: inex, layout, login, register, and route. It also has a script.js and style.css in the static folder. It has a Flask framework and an application.py file.  The database name is shop.db and is sqlite.  The event drivers below explain the functionality of this application and point out key components.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This website consists of several pages: index, layout, login, register, and route. It also has a script.js and style.css in the static folder. It has a Flask framework and an application.py file.  The database name is shop.db and is sqlite.
+
+
 
 **Event One -**
 
