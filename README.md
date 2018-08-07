@@ -13,7 +13,7 @@
 **Requirements for solution:**
 * Create a communication system between the vendor carts and warehouse to monitor inventory.
 * It will have a username and login page
-* Listing the location of the vendor station
+* Registration of location for the vendor station
 * Python, Flask, JavaScript, JSON, Socket.Io, HTML4 and CSS will drive the application.  Sqlite will manage the logins cart registrations, and inventory tracking.
 * Implementation of Bootstrap 4’s mobile responsiveness allows the vendor carts to use their smart phones to communicate.
 * The vendor’s have a simple interface that communicates the total number of meals need from the warehouse
@@ -21,6 +21,8 @@
 * Google's directions API is used to communicate to the vender for time of delivery.  The use of this API is key to the communication system.  A message displays to the vendor cart about arrival time.  A countdown animation displays on the vendor’s phone to track arrival time.
 * Once the delivery is made, the vendor marks it complete and the shop's inventory is marked as inventory sold.
 * The API information is located at https://developers.google.com/maps/documentation/directions/start
+
+## Key Components and Design
 
 ## Shop 
 
