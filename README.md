@@ -22,6 +22,7 @@
 * Once the delivery is made, the vendor marks it complete and the shop's inventory is marked as inventory sold.
 * The API information is located at https://developers.google.com/maps/documentation/directions/start
 
+
 ##Shop 
 - Email - shop@final.com
 - Password - shop
