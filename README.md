@@ -2,6 +2,33 @@
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This website provides estimated inventory delivery for a small food vendor located with the city of Boson's subway system.  The website uses Google's direction API for arrival predictions because the vendor delivers the inventory on the subway.
 
+# Business functional summary description
+
+**Summary:**
+	Charlie has an amazing sandwich shop that serves meals from 5am to 6pm. Charlie must keep his inventory storage and shop rental costs low, so he strategically located six vendor carts around the city of Boston’s subway system.  He has a kitchen and warehouse located at one location.  Each cart can hold only 50 sandwiches and 10 lbs. of coffee.  Sales at each location range from 30 to 100 sandwiches a day and 20 lbs. of coffee per day.
+
+**Problem:**
+	Charlie must use the subway system to deliver inventory to the vendor carts located around the city.  The vendor must know whether his inventory will arrive on time; otherwise, they have to close down, or be able to manage the customer expectations of when the sandwich or coffee will arrive.
+
+**Requirements for solution:**
+* Create a communication system between the vendor carts and warehouse to monitor inventory.
+* It will have a username and login page
+* Listing the location of the vendor station
+* Python, JavaScript, JSON, and Socket.IO will drive the application.  Heroku will manage the logins and communications.
+* Implementation of Bootstrap 4’s mobile responsiveness allows the vendor carts to use their smart phones to communicate.
+* The vendor’s have a simple interface that communicates the total number of meals to the warehouse
+* When the inventory of coffee or sandwiches falls below a certain level an order is created at the warehouse for both Coffee and Sandwich to bring them back up to the highest inventory level
+* The subway system has an API for schedules, arrival predictions, and service alerts.  The use of this API is key to the communication system.  A message displays to the vendor cart about arrival time.  A countdown animation displays on the vendor’s phone to track arrival time.  The countdown clock adjusts depending on the real-time location of the train that contains the inventory.
+* The API information is located at https://www.mbta.com/developers/v3-api and will take advantage of at least one of the following:
+
+1. When a vehicle is predicted to be at a stop
+2. The predicted schedule for one route
+3. The predicted schedule for a whole trip
+4. When a vehicle is scheduled to be at a stop
+5. The schedule for one route
+6. When a route is open
+7. Query for the first and last stops on the route.
+8. The schedule for a whole trip
 ##Shop 
 - Email - shop@final.com
 - Password - shop
