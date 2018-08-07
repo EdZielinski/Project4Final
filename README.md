@@ -20,7 +20,7 @@
 * When the inventory of coffee or sandwiches falls below a certain level an order is typed into the interface to automatically order inventory from the warehouse.  Both Coffee and Sandwiches are ordered to bring the cart back up to the highest inventory level
 * Google's directions API is used to communicate to the vender for time of delivery.  The use of this API is key to the communication system.  A message displays to the vendor cart about arrival time.  A countdown animation displays on the vendor’s phone to track arrival time.
 * Once the delivery is made, the vendor marks it complete and the shop's inventory is marked as inventory sold.
-* The API information is located at https://www.mbta.com/developers/v3-api and will take advantage of at least one of the following:
+* The API information is located at https://developers.google.com/maps/documentation/directions/start  
 
 ##Shop 
 - Email - shop@final.com
