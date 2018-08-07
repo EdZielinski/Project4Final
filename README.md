@@ -1,6 +1,6 @@
 # Charlie's Coffee and Sandwich Shop
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This website provides time estimates of inventory delivery for a small food vendor doing business within the city of Boson's subway system.  The vendor delivers the inventory on the subway so it uses a uses Google's direction API to manage arrival times.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This website provides time estimates of inventory delivery for a small food vendor doing business within the city of Boson's subway system.  The vendor delivers the inventory on the subway so it uses a uses Google's direction API to manage arrival times.  Python, Flask, JavaScript, JSON, Socket.IO, HTML5 and CSS will drive the application.  Sqlite will manage the logins, cart registrations, and inventory tracking.
 
 **Business functional summary description**
 
@@ -14,7 +14,7 @@
 * Create a communication system between the vendor carts and warehouse to monitor inventory.
 * It will have a username and login page
 * Registration of location for the vendor station
-* Python, Flask, JavaScript, JSON, Socket.Io, HTML4 and CSS will drive the application.  Sqlite will manage the logins cart registrations, and inventory tracking.
+* Python, Flask, JavaScript, JSON, Socket.IO, HTML5 and CSS will drive the application.  Sqlite will manage the logins, cart registrations, and inventory tracking.
 * Implementation of Bootstrap 4’s mobile responsiveness allows the vendor carts to use their smart phones to communicate.
 * The vendor’s have a simple interface that communicates the total number of meals need from the warehouse
 * When the inventory of coffee or sandwiches falls below a certain level an order is typed into the interface to automatically order inventory from the warehouse.  Both Coffee and Sandwiches are ordered to bring the cart back up to the highest inventory level
@@ -23,6 +23,8 @@
 * The API information is located at https://developers.google.com/maps/documentation/directions/start
 
 ## Key Components and Design
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This website cons
 
 ## Shop 
 
