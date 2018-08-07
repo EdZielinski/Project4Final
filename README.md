@@ -1,6 +1,6 @@
 # Charlie's Coffee and Sandwich Shop
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This website provides estimated inventory delivery for a small food vendor located with the city of Boson's subway system.  The website uses Google's direction API for arrival predictions because the vendor delivers the inventory on the subway.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This website provides estimated inventory delivery for a small food vendor doing business within the city of Boson's subway system.  The website uses Google's direction API for arrival predictions because the vendor delivers the inventory on the subway.
 
 # Business functional summary description
 
