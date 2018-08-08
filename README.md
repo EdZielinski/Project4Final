@@ -26,10 +26,6 @@
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This website consists of several pages: index, layout, login, register, and route. It also has a script.js and style.css in the static folder. It has a Flask framework and an application.py file.  The database name is shop.db and is sqlite.
 
-
-
-**Open Website**
-
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;At first sign on to the website a database is created with an inventory and user schema.  On subsequent sign-ins, if the database is present, then it will not re-build.  If there are any previous sales in inventory for any vendor, then the data is fetched.  Next the User is presented with a Login and Registration choice on the index page.
 
 **Index.html**
