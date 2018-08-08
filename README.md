@@ -63,7 +63,7 @@
 
  **Illustration 2**
  * shows the Shop on the left and the Vendor on the right.  The vendor has just 
- ![IMAGE](RDMEimg/OrderMarkedasDelivered.png) 
+ ![IMAGE](RDMEimg/OrderMarkedasDelivered2.png) 
 
 **Google Directions API summary**
 
