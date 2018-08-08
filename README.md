@@ -58,6 +58,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;So depending on whether you are the the vendor or the shop you see two different views.  The vendor sees the clock counting down to their estimated delivery time. The shop sees that there is a current delivery in progress. See below.
 
 ![IMAGE](images/CurrentOrderPendingDelivery.png)
+
 **Google Directions API summary**
 
 **Work Flow for an Order from Vendor**
