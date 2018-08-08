@@ -34,6 +34,13 @@
 
 **Index.html**
 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If the user is not logged in, then the Login and Register buttons appear on the page.  
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If the session type is shop, then for each vendor in the database the item and value are displayed for sandwiches sold, coffee sold and current deliveries pending delivery.
+
+
+
+
 
 **Event Two -**
 
