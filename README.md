@@ -44,15 +44,17 @@
 
 **Login.html**
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  Login can only be enter with POST, otherwise the login page will display again.  On a successful POST method the User schema is queried to determine if they are a registered user, then the session boolean value for logged_in will be marked as true and the session type will be marked with either 'shop' or 'vendor' and then redirected to the index page.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Login can only be enter with POST, otherwise the login page will display again.  On a successful POST method the User schema is queried to determine if they are a registered user, then the session boolean value for logged_in will be marked as true and the session type will be marked with either 'shop' or 'vendor' and then redirected to the index page.
 
 **Register.html**
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Register can only be with POST. User enters there name, email, password, whether they are a shop or a vendor and then there address.  The current business rule for address is that the vendor must enter a valid subway stop.  In order to help choose the address the google geocomplete() function is used with the google API to get a valid map address with the 'input2AddressForm' variable. When the user clicks register, then python will check if it is a shop type that this name does not exist in the table, but if it is a new user then the data is committed to the table, the session is mared 'Registered' and the user redirected back to the login.html page.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Register can only be with POST. User enters there name, email, password, whether they are a shop or a vendor and then there address.  The current business rule for address is that the vendor must enter a valid subway stop.  In order to help choose the address the google geocomplete() function is used with the google API to get a valid map address with the 'input2AddressForm' variable. When the user clicks register, then python will check if it is a shop type that this name does not exist in the table, but if it is a new user then the data is committed to the table, the session is mared 'Registered' and the user redirected back to the login.html page.
 
-**Event Two -**
+**Data Flow for Ordering and Tracking Delivery**
 
-**Event Three -**
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Once the Shop and the Vendors are in place an order of inventory can be placed for delivery.  The basic communication data flow is explained below.
+
+**Google Directions API summary**
 
 ## Shop 
 
