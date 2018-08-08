@@ -46,9 +46,16 @@
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Register can only be with POST. User enters there name, email, password, whether they are a shop or a vendor and then there address.  The current business rule for address is that the vendor must enter a valid subway stop.  In order to help choose the address the google geocomplete() function is used with the google API to get a valid map address with the 'input2AddressForm' variable. When the user clicks register, then python will check if it is a shop type that this name does not exist in the table, but if it is a new user then the data is committed to the table, the session is mared 'Registered' and the user redirected back to the login.html page.
 
+**Route.html**
+
+
 **Communication Design - Interactions between Python and JavaScript**
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Once the Shop and the Vendors are in place an order of inventory can be placed for delivery.  The basic communication data flow is explained below.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;When the user places an order on the order screen, the 'click' the submit order button.  This kicks off the orderForm.addEventListener event, and we send the order data to the python app through the web-socket.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Now the socketio.on("order") takes over, updates the index.html page through the javascript file at 'socket.on('update_table'...)'. At this point the time to deliver from the Shop (Downtown Crossing) and the vendor cart is calcualted, then that time is passed back to the JavaScript file through the socketio.emit("timer", time).  then updates the time that it will take to deliver and then this is sent back
 
 **Google Directions API summary**
 
