@@ -28,9 +28,13 @@
 
 
 
-**Login**
+**Open Website**
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;At first sign on to the website a database is created with an inventory and user schema.  On subsequent sign-ins, if the database is present, then it will not re-build.  If there are any previous sales in inventory for any vendor, then the data is fetched.  Next the User is presented with a Login and Registration choice on the index page.
+
+**Index.html**
+
+
 **Event Two -**
 
 **Event Three -**
