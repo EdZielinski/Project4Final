@@ -51,9 +51,7 @@
 
 **Communication Design - Interactions between Python and JavaScript**
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Once the Shop and the Vendors are in place an order of inventory can be placed for delivery.  The basic communication data flow is explained below.
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;When the user places an order on the order screen, the 'click' the submit order button.  This kicks off the orderForm.addEventListener event, and we send the order data to the python app through the web-socket.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Once the Shop and the Vendors are in place an order of inventory can be placed for delivery.  The user places an order on the order screen, the 'click' the submit order button.  This kicks off the orderForm.addEventListener event, and we send the order data to the python app through the web-socket.
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Now the socketio.on("order") takes over, updates the index.html page through the javascript file at 'socket.on('update_table'...)'. At this point the time to deliver from the Shop (Downtown Crossing) and the vendor cart is calcualted, then that time is passed back to the JavaScript file through the socketio.emit("timer", time).  then updates the time that it will take to deliver and then this is sent back
 
