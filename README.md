@@ -34,9 +34,11 @@
 
 **Index.html**
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If the user is not logged in, then the Login and Register buttons appear on the page.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If the user is not logged in, then the Login and Register buttons appear on the page.  If Login is clicked then the Login page opens, and if Register is clicked, then the Register page opens.
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If the session type is shop, then for each vendor in the database the item and value are displayed for sandwiches sold, coffee sold and current deliveries pending delivery.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If the session type is 'shop', then for each vendor in the database the item and value are displayed for sandwiches sold, coffee sold and current deliveries pending delivery.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If the session type is 'vendor', the order-div is displayed for the vendor to order sandwiches and coffee.
 
 
 
