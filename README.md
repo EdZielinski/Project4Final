@@ -46,13 +46,17 @@
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Register can only be with POST. User enters there name, email, password, whether they are a shop or a vendor and then there address.  The current business rule for address is that the vendor must enter a valid subway stop.  In order to help choose the address the google geocomplete() function is used with the google API to get a valid map address with the 'input2AddressForm' variable. When the user clicks register, then python will check if it is a shop type that this name does not exist in the table, but if it is a new user then the data is committed to the table, the session is mared 'Registered' and the user redirected back to the login.html page.
 
-**Data Flow for Ordering and Tracking Delivery**
+**Communication Design - Interactions between Python and JavaScript**
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Once the Shop and the Vendors are in place an order of inventory can be placed for delivery.  The basic communication data flow is explained below.
 
 **Google Directions API summary**
 
 **Work Flow for an Order from Vendor**
+
+**Scalability**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;valid move would be to use postgres/mysql for database. Heroku can be used for postgres or mysql. Flask is fine for scalability and move to django is not required. But more users for the move to mysql/postgres from sqlite mean like a million users and total data in the range of terabytes.
 
 ## Shop 
 
@@ -76,3 +80,7 @@
 ### Vendor D
 - Email - vendor_d@final.com
 - Password - vendor_d
+
+**Sources**
+
+https://www.w3schools.com/jsref/met_win_clearinterval.asp
