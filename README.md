@@ -34,15 +34,21 @@
 
 **Index.html**
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If the user is not logged in, then the Login and Register buttons appear on the page.  If Login is clicked then the Login page opens, and if Register is clicked, then the Register page opens.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-If the user is not logged in, then the Login and Register buttons appear on the page.  If Login is clicked then the Login page opens, and if Register is clicked, then the Register page opens.
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If the session type is 'shop', then for each vendor in the database the item and value are displayed for sandwiches sold, coffee sold and current deliveries pending delivery.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-If the session type is 'shop', then for each vendor in the database the item and value are displayed for sandwiches sold, coffee sold and current deliveries pending delivery.
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If the session type is 'vendor', the order-div is displayed for the vendor to order sandwiches and coffee.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-If the session type is 'vendor', then the order-div is displayed for the vendor to order sandwiches and coffee.
 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The index page also is home to the timer which counts down the time for delivery and the button with the ability to mark the order as complete.  These two classes are not displayed until an order is placed or marked complete and will be described under the event listeners below.
 
+**Login.html**
 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  Login can only be enter with POST, otherwise the login page will display again.  On a successful POST method the User schema is queried to determine if they are a registered user, then the session boolean value for logged_in will be marked as true and the session type will be marked with either 'shop' or 'vendor' and then redirected to the index page.
 
+**Register.html**
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Register can only be with POST. User enters there name, email, password, whether they are a shop or a vendor and then there address.  The current business rule for address is that the vendor must enter a valid subway stop.  In order to help choose the address the google geocomplete() function is used with the google API to get a valid map address with the 'input2AddressForm' variable. When the user clicks register, then python will check if it is a shop type that this name does not exist in the table, but if it is a new user then the data is committed to the table, the session is mared 'Registered' and the user redirected back to the login.html page.
 
 **Event Two -**
 
