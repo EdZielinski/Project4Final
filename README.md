@@ -55,8 +55,9 @@
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Now the socketio.on("order") takes over in application.py, commits the data to the inventory table, and then updates the index.html page through the javascript file at 'socket.on('update_table'...)'. Also in the application.py the time to deliver from the Shop (Downtown Crossing) to the vendor cart is calculated using the Google Directions API(see CALCULATION below), then that time is passed back to the JavaScript file through the socketio.emit("timer", time)and updates the time that it will take to deliver in the JavaScript at 'socket.on('timer', (time) => {.'  This time string is updated in the element with id="timer" for the class = "timer" in the index.html page.
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;So depending on whether you are the the vendor or the shop you see two different views.  The vendor sees the clock counting down to their estimated delivery time. The shop sees that there is a current delivery in progress. See below.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;So depending on whether you are the the vendor or the shop you see two different views.  The vendor sees the clock counting down to their estimated delivery time. The shop sees that there is a current delivery in progress. Diagram 1 and Diagram 2 below.
 
+- Diagram one shows the Shop on the left and the Vendor on the right.  The vendor has just ordered 15 Sandwiches and 5 pounds of coffee, so the shop sees this in the Current Delivery line.  The Vendor can see the clock counting down for the time it takes to get from Downtown Crossing to Ashmont.
 ![IMAGE](RDMEimg/CurrentOrderPendingDelivery.png)  
 
 **Google Directions API summary**
