@@ -53,7 +53,7 @@
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Once the Shop and the Vendors are in place an order of inventory can be placed for delivery.  The user places an order on the order screen, the 'click' the submit order button.  This kicks off the orderForm.addEventListener event, and we send the order data to the python app through the web-socket.
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Now the socketio.on("order") takes over in application.py, updates the index.html page through the javascript file at 'socket.on('update_table'...)'. Also in the application.py the time to deliver from the Shop (Downtown Crossing) to the vendor cart is calculated using the Google Directions API(see CALCULATION below), then that time is passed back to the JavaScript file through the socketio.emit("timer", time)and updates the time that it will take to deliver in the JavaScript at 'socket.on('timer', (time) => {.'
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Now the socketio.on("order") takes over in application.py, commits the data to the inventory table, and then updates the index.html page through the javascript file at 'socket.on('update_table'...)'. Also in the application.py the time to deliver from the Shop (Downtown Crossing) to the vendor cart is calculated using the Google Directions API(see CALCULATION below), then that time is passed back to the JavaScript file through the socketio.emit("timer", time)and updates the time that it will take to deliver in the JavaScript at 'socket.on('timer', (time) => {.'
 
 **Google Directions API summary**
 
