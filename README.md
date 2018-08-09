@@ -24,7 +24,7 @@
 * When the inventory of coffee or sandwiches falls to a level where the vendor must order they do so through a simple ordering interface on their smart phone.  Both Coffee and Sandwiches are ordered to bring the cart back up to the highest inventory level.
 * Google's directions API is used to communicate to the vender for time of delivery.  The use of this API is key to the communication system.  A message displays to the vendor cart about arrival time.  A countdown then displays on the vendor’s phone to track arrival time. The API information is located at https://developers.google.com/maps/documentation/directions/start
 * Once the delivery is made, the vendor marks it complete and the shop's inventory is marked as inventory sold.
-* The address used to register the vednor or shop also uses the 'geocomplete()' package from Google to assure an address is picked from their map services.
+* The address used to register the vendor or shop is an autocomplete dropdown found with the 'geocomplete()' package from Google to assure an address is picked from their map services.
 
 ## Key Components and Design
 
@@ -44,7 +44,7 @@
 
 **Login.html**
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Login is POST, otherwise the login page will display again.  On a successful POST method the User schema is queried to determine if they are a registered user, then the session boolean value for logged_in will be marked as true and the session type will be marked with either 'shop' or 'vendor' and then redirected to the index page.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Login is POST encode the request and assure information is not leaked to the user when submitted, otherwise the login page will display again.  On a successful POST method the User schema is queried to determine if they are a registered user, then the session boolean value for logged_in will be marked as true and the session type will be marked with either 'shop' or 'vendor' and then redirected to the index page.
 
 **Register.html**
 
@@ -66,7 +66,7 @@
 * Shows the Shop on the left and the Vendor on the right.  The vendor has just ordered 15 Sandwiches and 5 pounds of coffee, so the shop sees this in the Current Delivery line.  The Vendor can see the clock counting down for the time it takes to get from Downtown Crossing to Ashmont.
 ![IMAGE](RDMEimg/CurrentOrderPendingDelivery.png) 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;From here the vendor would mark the the order as delivered, so the 'Current Delivery' is set to NULL, at this point the JaviScript is listening for the 'click' event of the markButton and when it is true the listener named 'markButton.addEventListener('click', (event) =>' is triggered and the 'clearInterval' function is run. The 'timer' and 'mark' areas on the HTML are set to d-none to reset the cart view, and then the 'delivered' message is emitted back to application.py.  In the application.py the 'shop_status' function is run to update and commit the data changes to the inventory schema, and then emits the 'reset_current' back to JavaScript to reset the current line to Null. This shows the vendor there is not a current delivery in progress. See Illustration 2.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;From here the vendor would mark the the order as delivered, so the 'Current Delivery' is set to NULL, at this point the JaviScript is listening for the 'click' event of the markButton and when it is true the listener named 'markButton.addEventListener('click', (event) =>' is triggered and the 'clearInterval' function is run to stop the timer. The 'timer' and 'mark' areas on the HTML are set to d-none to reset the cart view, and then the 'delivered' message is emitted back to application.py.  In the application.py the 'shop_status' function is run to update and commit the data changes to the inventory schema, and then emits the 'reset_current' back to JavaScript to reset the current line to Null. This shows the vendor there is not a current delivery in progress. See Illustration 2.
 
  **Illustration 2**
  * Shows the Shop on the left and the Vendor on the right.  The vendor has just clicked the 'Mark as Delivered' button which changes their view back to order mode. The shop view changes to show the inventory change of more product sold and the current delivery in progress is set to Null.
