@@ -17,10 +17,10 @@
 * Python, Flask, JavaScript, JSON, Socket.IO, HTML5 and CSS will drive the application.  Sqlite will manage the logins, cart registrations, and inventory tracking.
 * Implementation of Bootstrap 4’s mobile responsiveness allows the vendor carts to use their smart phones to communicate.
 * The vendor’s have a simple interface that communicates the total number of meals needed from the shop
-* When the inventory of coffee or sandwiches falls to a level where the vendor must order he does so through a simple ordering interface on their smart phone.  Both Coffee and Sandwiches are ordered to bring the cart back up to the highest inventory level.
-* Google's directions API is used to communicate to the vender for time of delivery.  The use of this API is key to the communication system.  A message displays to the vendor cart about arrival time.  A countdown then displays on the vendor’s phone to track arrival time.
+* When the inventory of coffee or sandwiches falls to a level where the vendor must order they do so through a simple ordering interface on their smart phone.  Both Coffee and Sandwiches are ordered to bring the cart back up to the highest inventory level.
+* Google's directions API is used to communicate to the vender for time of delivery.  The use of this API is key to the communication system.  A message displays to the vendor cart about arrival time.  A countdown then displays on the vendor’s phone to track arrival time. The API information is located at https://developers.google.com/maps/documentation/directions/start
 * Once the delivery is made, the vendor marks it complete and the shop's inventory is marked as inventory sold.
-* The API information is located at https://developers.google.com/maps/documentation/directions/start
+* The address used to register the vednor or shop also uses the 'geocomplete()' package from Google to assure an address is picked from their map services.
 
 ## Key Components and Design
 
@@ -36,21 +36,21 @@
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-If the session type is 'vendor', then the order-div is displayed for the vendor to order sandwiches and coffee.
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The index page also is home to the timer which counts down the time for delivery and the button with the ability to mark the order as complete.  These two classes are not displayed until an order is placed or marked complete and will be described under the event listeners below.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The index page also is home to the timer which counts down the time for delivery and the button with the ability to mark the order as complete.  These two classes are not displayed until an order is placed or marked complete.
 
 **Login.html**
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Login can only be enter with POST, otherwise the login page will display again.  On a successful POST method the User schema is queried to determine if they are a registered user, then the session boolean value for logged_in will be marked as true and the session type will be marked with either 'shop' or 'vendor' and then redirected to the index page.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Login is POST, otherwise the login page will display again.  On a successful POST method the User schema is queried to determine if they are a registered user, then the session boolean value for logged_in will be marked as true and the session type will be marked with either 'shop' or 'vendor' and then redirected to the index page.
 
 **Register.html**
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Register can only be with POST. User enters there name, email, password, whether they are a shop or a vendor and then there address.  The current business rule for address is that the vendor must enter a valid subway stop.  In order to help choose the address the google geocomplete() function is used with the google API to get a valid map address with the 'input2AddressForm' variable. When the user clicks register, then python will check if it is a shop type that this name does not exist in the table, but if it is a new user then the data is committed to the table, the session is mared 'Registered' and the user redirected back to the login.html page.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Register is POST. User enters their name, email, password, whether a shop or a vendor and then their address.  The current business rule for address is that the vendor must enter a valid subway stop.  In order to help choose the address, the google geocomplete() function is used with the google API to get a valid map address with the 'input2AddressForm' variable. When the user clicks register, then application.py will check if it is a shop type, the name exists in the table, and if it is a new user, then the data is committed to the table, the session is marked 'Registered' and the user redirected back to the login.html page.
 
 **Route.html**
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This page shows the MBTA subway routes
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This page shows the MBTA subway routes.
 
-**Communication Design - Interactions between Python and JavaScript**
+## Communication Design - Interactions between Python and JavaScript
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Once the Shop and the Vendors are in place an order of inventory can be placed for delivery.  The user places an order on the order screen, the 'click' the submit order button.  This kicks off the orderForm.addEventListener event, and we send the order data to the python app through the web-socket.
 
