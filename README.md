@@ -77,6 +77,8 @@
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Should this app expand to more subway systems and gain a million users with data in the terabytes, then a valid move is to use postgres/mysql for the database. Heroku can be used for either postgres or mysql. Flask is fine for scalability and move to Django is not required. 
 
+## User names and passwords
+
 ## Shop 
 
 - Email - shop@final.com
@@ -103,3 +105,4 @@
 **Sources**
 
 https://www.w3schools.com/jsref/met_win_clearinterval.asp
+https://developers.google.com/maps/documentation/directions/start
