@@ -5,7 +5,7 @@
 **Business functional specification**
 
 **Summary:**
-	Charlie has an amazing sandwich shop that serves meals from 5am to 6pm. Charlie must keep his inventory storage and shop rental costs low, so he places vendor carts around the city of Boston’s subway system.  He has a shop located at Downtown Crossing that holds the main supply of inventory.  Each cart can only hold a certain amount of product.  Sales at each location range from 30 to 100 sandwiches a day and 20 lbs. of coffee per day.
+	Charlie has an amazing sandwich shop that serves meals from 5 am to 6 pm. Charlie must keep his inventory storage and shop rental costs low, so he places vendor carts around the city of Boston’s subway system.  He has a shop located at Downtown Crossing that holds the main supply of inventory.  Each cart can only hold a certain amount of product.  Sales at each location range from 30 to 100 sandwiches a day and 20 lbs. of coffee per day.
 
 **Problem:**
 	Charlie must use the subway system to deliver inventory to the vendor carts located around the city.  The vendor must know whether his inventory will arrive on time; otherwise, they have to close down, or be able to manage the customer expectations of when the sandwiches or coffee will arrive.
