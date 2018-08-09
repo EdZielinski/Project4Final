@@ -2,6 +2,9 @@
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This website provides time estimates of inventory delivery for a small food vendor doing business within the city of Boson's subway system.  The vendor delivers the inventory on the subway so it uses Google's direction API to manage inventory arrival times.  Python, Flask, JavaScript, JSON, Socket.IO, HTML5 and CSS will drive the application.  The database is Sqlite and will manage the logins, cart registrations, and inventory tracking.
 
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The shop and vendor passwords are located at the very bottom of this readme document.
+
 **Business functional specification**
 
 **Summary:**
@@ -50,11 +53,11 @@
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This page shows the MBTA subway routes.
 
-## Communication Design - Interactions between Python and JavaScript
+## Interactions between Python and JavaScript
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Once the Shop and the Vendors are in place an order of inventory can be placed for delivery.  The user places an order on the order screen, the 'click' the submit order button.  This kicks off the orderForm.addEventListener event, and we send the order data to the python app through the web-socket.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Once the Shop and the Vendors are in place, an order of inventory is placed for delivery.  The vendor places an order on the order screen, they 'click' the submit order button.  This triggers the orderForm.addEventListener event, and we send the 'order' data to application.py through the web-socket.
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Now the socketio.on("order") takes over in application.py, commits the data to the inventory table, and then updates the index.html page through the javascript file at 'socket.on('update_table'...)'. Also in the application.py the time to deliver from the Shop (Downtown Crossing) to the vendor cart is calculated using the Google Directions API(see CALCULATION below), then that time is passed back to the JavaScript file through the socketio.emit("timer", time)and updates the time that it will take to deliver in the JavaScript at 'socket.on('timer', (time) => {.'  This time string is updated in the element with id="timer" for the class = "timer" in the index.html page.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Now the socketio.on("order") takes over in application.py, commits the data to the inventory table, and then updates the index.html page through the javascript file at 'socket.on('update_table'...)'. Also in the application.py the time to deliver from the Shop (Downtown Crossing) to the vendor cart is calculated using the Google Directions API, then the 'time' is passed back to the JavaScript file through the socketio.emit("timer", time) and updates the time that it will take to deliver in the JavaScript at 'socket.on('timer', (time) => {.'  This time string is updated in the element with id="timer" for the class = "timer" in the index.html page.
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;So depending on whether you are the the vendor or the shop you see two different views.  The vendor sees the clock counting down to their estimated delivery time. The shop sees that there is a current delivery in progress. See Illustration 1.
 
@@ -62,19 +65,16 @@
 * Shows the Shop on the left and the Vendor on the right.  The vendor has just ordered 15 Sandwiches and 5 pounds of coffee, so the shop sees this in the Current Delivery line.  The Vendor can see the clock counting down for the time it takes to get from Downtown Crossing to Ashmont.
 ![IMAGE](RDMEimg/CurrentOrderPendingDelivery.png) 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;From here the vendor would mark the the order as delivered, so the current is set to NULL, wo what happens is the javiscript is listening for the markButton and when it is true the listener named 'markButton.addEventListener('click', (event) =>' is triggered and the clearInterval function is run, the timer and mark areas on the HTML are set to d-none to reset the cart view, and then the 'delivered' message is emitted back to application.py.  In the application.py the shop_status function is run to update and commit the data changes to the inventory schema and then emits the 'reset_current' back to javascript to reset the current line to Null, basically to mark that there is not any current delivery in progress from the shop view. See Illustration 2.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;From here the vendor would mark the the order as delivered, so the 'Current Delivery' is set to NULL, at this point the JaviScript is listening for the 'click' event of the markButton and when it is true the listener named 'markButton.addEventListener('click', (event) =>' is triggered and the 'clearInterval' function is run. The 'timer' and 'mark' areas on the HTML are set to d-none to reset the cart view, and then the 'delivered' message is emitted back to application.py.  In the application.py the 'shop_status' function is run to update and commit the data changes to the inventory schema, and then emits the 'reset_current' back to JavaScript to reset the current line to Null. This shows the vendor there is not a current delivery in progress. See Illustration 2.
 
  **Illustration 2**
- * Shows the Shop on the left and the Vendor on the right.  The vendor has just clicked the 'Mark as Delivered' button which changes their view back to order mode. The shop view changes to show the inventory change for more product sold and the current delivery in progress is set to Null.
+ * Shows the Shop on the left and the Vendor on the right.  The vendor has just clicked the 'Mark as Delivered' button which changes their view back to order mode. The shop view changes to show the inventory change of more product sold and the current delivery in progress is set to Null.
  ![IMAGE](RDMEimg/OrderMarkedasDelivered2.png) 
 
-**Google Directions API summary**
 
-**Work Flow for an Order from Vendor**
+##  Scalability
 
-**Scalability**
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;valid move would be to use postgres/mysql for database. Heroku can be used for postgres or mysql. Flask is fine for scalability and move to django is not required. But more users for the move to mysql/postgres from sqlite mean like a million users and total data in the range of terabytes.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Should this app expand to more subway systems and gain a million users with data in the terabytes, then a valid move is to use postgres/mysql for the database. Heroku can be used for either postgres or mysql. Flask is fine for scalability and move to Django is not required. 
 
 ## Shop 
 
