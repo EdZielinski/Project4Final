@@ -2,8 +2,9 @@
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This website provides time estimates of inventory delivery for a small food vendor doing business within the city of Boson's subway system.  The vendor delivers the inventory on the subway so it uses Google's direction API to manage inventory arrival times.  Python, Flask, JavaScript, JSON, Socket.IO, HTML5 and CSS will drive the application.  The database is Sqlite and will manage the logins, cart registrations, and inventory tracking.
 
+**User names and passwords**
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The shop and vendor passwords are located at the very bottom of this readme document.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;User names and passwords are located at the very bottom of this readme document.
 
 **Business functional specification**
 
